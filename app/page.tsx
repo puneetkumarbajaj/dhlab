@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -133,7 +132,7 @@ export default function Home() {
             digital humans capable of realistic human-like interactions.
           </p>
           <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-200">
-            These virtual beings "see" and "hear" users, processing their speech
+            These virtual beings see and hear users, processing their speech
             and facial expressions in real-time. Data collected from video,
             audio, and text is processed by AI models like NVIDIA NeMo and
             Elevenlabs for natural conversational responses.
@@ -160,7 +159,7 @@ export default function Home() {
               <p className="text-gray-700">
                 In this phase, we developed the emotional and empathic response
                 system for our digital humans using Unreal Engine 5, enabling
-                them to react to users' emotions.
+                them to react to users emotions.
               </p>
             </div>
 
