@@ -1,33 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-transporter.verify((error, success) => {
-  if (error) {
-    console.error('SMTP verification failed:', error);
-  } else {
-    console.log('SMTP connection verified:', success);
-  }
-});
-
 export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json();
-    
-    console.log('Sending email to:', process.env.EMAIL_TO);
 
-    const info = await transporter.sendMail({
-      from: `"${name}" <${process.env.EMAIL_USER}>`,
+    // Move the transporter creation inside the handler function
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // Optional: Verify the transporter (you can remove this if not needed)
+    await transporter.verify();
+
+    await transporter.sendMail({
+      from: `"${name}" <${process.env.EMAIL_FROM}>`,
       to: process.env.EMAIL_TO,
+      replyTo: `${name} <${email}>`,
       subject: `New message from ${name}`,
       text: message,
       html: `
@@ -36,9 +31,6 @@ export async function POST(request: NextRequest) {
         <p><strong>Message:</strong> ${message}</p>
       `,
     });
-
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
     return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
   } catch (error) {
