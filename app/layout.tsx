@@ -14,10 +14,27 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AnimaSentio | AI-Powered Virtual Humans for Interactive Education",
-  description: "AnimaSentio combines artificial intelligence, computer vision, and emotional detection algorithms to create lifelike virtual humans for immersive, interactive learning experiences. Explore AI-driven education, museum applications, and conversational historical figures in real-time simulations using Unreal Engine and NVIDIA technology.",
-  keywords: "AI, virtual humans, interactive education, digital human software, computer vision, AI-powered education, museum technology, Unreal Engine, NVIDIA, conversational AI, emotional detection, immersive learning, historical figures, AI education",
+  title: "AnimaSentio | AI-Powered Virtual Humans for Immersive Experiences",
+  description:
+    "AnimaSentio leverages advanced AI, emotional detection, and computer vision to create lifelike virtual humans. These digital beings can engage in real-time conversations, respond to emotions, and simulate immersive experiences across entertainment, virtual assistants, museum interactions, and more. Powered by Unreal Engine and NVIDIA technologies.",
+  keywords:
+    "AI, virtual humans, immersive experiences, digital human software, computer vision, AI-powered technology, museum technology, Unreal Engine, NVIDIA, conversational AI, emotional detection, entertainment, virtual assistants",
   robots: "index, follow",
+  openGraph: {
+    title: "AnimaSentio | AI-Powered Virtual Humans for Interactive Education",
+    description:
+      "AnimaSentio creates lifelike virtual humans using AI for immersive, interactive learning experiences.",
+    url: "https://dhlab.vercel.app",
+    type: "website",
+    images: [
+      {
+        url: "/images/og.png", // Replace with the actual URL of your OG image
+        width: 1200,
+        height: 630,
+        alt: "AnimaSentio Virtual Human Demo",
+      },
+    ],
+  },
 };
 
 
