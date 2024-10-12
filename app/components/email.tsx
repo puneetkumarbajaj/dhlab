@@ -1,6 +1,8 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from 'react';
 
+export const runtime = 'nodejs';
+
 interface FormData {
   name: string;
   email: string;
