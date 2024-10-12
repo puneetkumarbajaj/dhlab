@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Digital Human Software | AI-Powered Virtual Humans for Interactive Education",
-  description: "Digital Human Software combines artificial intelligence, computer vision, and emotional detection algorithms to create lifelike virtual humans for immersive, interactive learning experiences. Explore AI-driven education, museum applications, and conversational historical figures in real-time simulations using Unreal Engine and NVIDIA technology.",
+  title: "AnimaSentio | AI-Powered Virtual Humans for Interactive Education",
+  description: "AnimaSentio combines artificial intelligence, computer vision, and emotional detection algorithms to create lifelike virtual humans for immersive, interactive learning experiences. Explore AI-driven education, museum applications, and conversational historical figures in real-time simulations using Unreal Engine and NVIDIA technology.",
   keywords: "AI, virtual humans, interactive education, digital human software, computer vision, AI-powered education, museum technology, Unreal Engine, NVIDIA, conversational AI, emotional detection, immersive learning, historical figures, AI education",
   robots: "index, follow",
 };

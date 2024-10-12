@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ContactForm from "./components/email";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
               textShadow: "2px 4px 6px rgba(0,0,0,0.3)",
             }}
           >
-            Welcome to Digital Human Lab
+            Welcome to AnimaSentio
           </h1>
           <p className="leading-7 text-gray-700 md:text-gray-300 text-center mt-4 mb-8 animate-fadeIn delay-100">
             Revolutionizing Interactive Education with Virtual Experiences
@@ -48,15 +49,15 @@ export default function Home() {
       <section id="About" className="py-20">
         <div className="container mx-auto px-8 md:px-16 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-8 animate-fadeIn">
-            What is Digital Human Lab?
+            What is AnimaSentio?
           </h2>
           <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-100">
-            Digital Human Software is an innovative research project focused on
+            AnimaSentio is an innovative research project focused on
             transforming the way we learn through interactive, AI-driven virtual
             human simulations. By integrating advanced technologies like
             computer vision and emotion-detection algorithms, we are creating
-            digital human characters capable of engaging with users in
-            real-time, providing a unique, natural way to learn.
+            digital human characters capable of engaging with users in real-time, 
+            providing a unique, natural way to learn.
           </p>
           <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-200">
             Our project, led by Professor Jeasy Sehgal at Georgia State
@@ -360,53 +361,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section
-        id="Contact"
-        className="bg-gradient-to-r from-purple-100 to-pink-100 py-20"
-      >
-        <div className="container mx-auto px-8 md:px-16">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12 animate-fadeIn">
-            Contact Us
-          </h2>
-          <form className="max-w-lg mx-auto space-y-6 animate-fadeIn delay-200">
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Name
-              </label>
-              <input
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                type="text"
-                placeholder="Your Name"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Email
-              </label>
-              <input
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                type="email"
-                placeholder="Your Email"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Message
-              </label>
-              <textarea
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Your Message"
-                rows={4}
-              ></textarea>
-            </div>
-            <div className="flex justify-center">
-              <Button className="transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-purple-600">
-                Send Message
-              </Button>
-            </div>
-          </form>
-        </div>
-      </section>
+      <ContactForm />
     </main>
   );
 }
