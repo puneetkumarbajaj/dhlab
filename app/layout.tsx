@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "AnimaSentio | AI-Powered Virtual Humans for Interactive Education",
     description:
       "AnimaSentio creates lifelike virtual humans using AI for immersive, interactive learning experiences.",
-    url: "https://dhlab.vercel.app",
+    url: "https://animasentio.vercel.app",
     type: "website",
     images: [
       {
