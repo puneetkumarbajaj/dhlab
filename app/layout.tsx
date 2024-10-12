@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og.png", // Replace with the actual URL of your OG image
+        url: "/images/og.png",
         width: 1200,
         height: 630,
         alt: "AnimaSentio Virtual Human Demo",

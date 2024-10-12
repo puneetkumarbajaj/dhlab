@@ -124,12 +124,12 @@ export default function Home() {
       <section id="Research" className="py-20 bg-white">
         <div className="container mx-auto px-8 md:px-16 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 animate-fadeIn">
-            The Technology Behind Digital Human Software
+            The Technology Behind AnimaSentio
           </h2>
           <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-100">
-            At the heart of Digital Human Software lies cutting-edge AI and
+            At the heart of AnimaSentio lies cutting-edge AI and
             computer vision technologies. We integrate Unreal Engine’s advanced
-            animation tools with NVIDIA platforms like ACE and NIMs to create
+            animation tools with Convai and NVIDIA platforms like ACE and NIMs to create
             digital humans capable of realistic human-like interactions.
           </p>
           <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-200">
@@ -340,7 +340,7 @@ export default function Home() {
             Impact and Future Goals
           </h2>
           <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-100">
-            Digital Human Software is set to revolutionize how education is
+            AnimaSentio is set to revolutionize how education is
             delivered by providing personalized, immersive learning experiences.
             We aim to enhance user engagement and knowledge retention,
             particularly in museum settings, with real-time AI-driven
