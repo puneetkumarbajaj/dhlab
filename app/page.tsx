@@ -277,7 +277,7 @@ export default function Home() {
               <div className="flex flex-col items-center">
                 <Avatar className="w-24 h-24 mb-4">
                   <AvatarImage
-                    src="/images/nicolas-avatar.jpg"
+                    src="/images/nick.png"
                     alt="Nicolas Salazar"
                   />
                   <AvatarFallback>NS</AvatarFallback>
@@ -296,8 +296,8 @@ export default function Home() {
               <div className="flex flex-col items-center">
                 <Avatar className="w-24 h-24 mb-4">
                   <AvatarImage
-                    src="/images/nicolas-avatar.jpg"
-                    alt="Nicolas Salazar"
+                    src="/images/elias.jpeg"
+                    alt="Elias Treadway"
                   />
                   <AvatarFallback>ET</AvatarFallback>
                 </Avatar>
@@ -316,7 +316,7 @@ export default function Home() {
                 <Avatar className="w-24 h-24 mb-4">
                   <AvatarImage
                     src="/images/nicolas-avatar.jpg"
-                    alt="Nicolas Salazar"
+                    alt="Troy"
                   />
                   <AvatarFallback>T</AvatarFallback>
                 </Avatar>
@@ -326,6 +326,42 @@ export default function Home() {
                 <p className="text-gray-500 mb-2">Research Assistant</p>
                 <p className="text-sm text-gray-700">
                   Georgia State University
+                </p>
+              </div>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
+              <div className="flex flex-col items-center">
+                <Avatar className="w-24 h-24 mb-4">
+                  <AvatarImage
+                    src="/images/Taylor.jpeg"
+                    alt="Troy"
+                  />
+                  <AvatarFallback>TM</AvatarFallback>
+                </Avatar>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                  Taylor Middleton
+                </h3>
+                <p className="text-gray-500 mb-2">Research Assistant</p>
+                <p className="text-sm text-gray-700">
+                  Georgia State University
+                </p>
+              </div>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
+              <div className="flex flex-col items-center">
+                <Avatar className="w-24 h-24 mb-4">
+                  <AvatarImage
+                    src="/images/kevin.jpg"
+                    alt="Kevin Gallardo"
+                  />
+                  <AvatarFallback>T</AvatarFallback>
+                </Avatar>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                  Kevin Gallardo
+                </h3>
+                <p className="text-gray-500 mb-2">Graduate Research Assistant</p>
+                <p className="text-sm text-gray-700">
+                CHAI center DoD center
                 </p>
               </div>
             </div>
