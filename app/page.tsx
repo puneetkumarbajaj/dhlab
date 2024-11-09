@@ -1,29 +1,53 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Play, Linkedin } from "lucide-react";
+import { Play, Linkedin, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function AnimaSentioLab() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <div className="flex flex-col min-h-screen scroll-smooth">
-      <header className="bg-gray-100 py-4">
+      <header className="bg-gray-100 py-4 sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center">
             <div className="text-2xl font-bold">AnimaSentio</div>
-            <div className="space-x-4">
-              <Link href="#about" className="hover:underline">
-                About
-              </Link>
-              <Link href="#features" className="hover:underline">
-                Features
-              </Link>
-              <Link href="#research" className="hover:underline">
-                Research
-              </Link>
-              <Link href="#team" className="hover:underline">
-                Team
-              </Link>
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </Button>
+            </div>
+            <div
+              className={`${
+                isMenuOpen ? "block" : "hidden"
+              } md:block absolute md:relative top-full left-0 right-0 bg-gray-100 md:bg-transparent p-4 md:p-0 mt-2 md:mt-0`}
+            >
+              <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                {["About", "Features", "Research", "Team"].map((item) => (
+                  <Link
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="hover:underline"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </div>
             </div>
           </nav>
         </div>
@@ -33,22 +57,24 @@ export default function AnimaSentioLab() {
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl font-bold mb-4">Welcome to AnimaSentio</h1>
-            <p className="text-xl mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Welcome to AnimaSentio
+            </h1>
+            <p className="text-lg md:text-xl mb-8">
               Revolutionizing Interactive Education with Virtual Experiences
             </p>
-            <div className="space-x-4 flex justify-center">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
               <Link href="#research">
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="flex items-center"
+                  className="w-full sm:w-auto"
                 >
                   Learn More
                 </Button>
               </Link>
               <Link href="#demo">
-                <Button size="lg" className="flex items-center">
+                <Button size="lg" className="w-full sm:w-auto">
                   <Play className="mr-2 h-4 w-4" />
                   See a Demo
                 </Button>
@@ -85,7 +111,7 @@ export default function AnimaSentioLab() {
                   exploring ancient Egypt with a digital Cleopatra.
                 </p>
               </div>
-              <div className="bg-gray-200 p-6 rounded-lg">
+              <div className="bg-gray-200 p-6 rounded-lg mt-8 md:mt-0">
                 <h3 className="text-xl font-semibold mb-4">Project Goals</h3>
                 <ul className="list-disc list-inside space-y-2">
                   <li>
@@ -112,7 +138,7 @@ export default function AnimaSentioLab() {
             <h2 className="text-3xl font-bold mb-12 text-center">
               Key Features
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card>
                 <CardHeader>
                   <CardTitle>Realistic Virtual Human Animations</CardTitle>
@@ -131,7 +157,7 @@ export default function AnimaSentioLab() {
                   user mood and tone, enhancing immersion.
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="md:col-span-2 lg:col-span-1">
                 <CardHeader>
                   <CardTitle>Conversational AI</CardTitle>
                 </CardHeader>
@@ -150,16 +176,18 @@ export default function AnimaSentioLab() {
             <h2 className="text-3xl font-bold mb-8 text-center">
               See AnimaSentio in Action
             </h2>
-            <div className="aspect-w-16 aspect-h-9 origin-center">
+            <div
+              className="relative"
+              style={{ paddingBottom: "56.25%", height: 0 }}
+            >
               <iframe
-                width="1253"
-                height="705"
                 src="https://www.youtube.com/embed/BiqYFI3RoUM"
-                title="AnimaSento - Digital Human Research - Prof  Sardar Jeasy Sehgal"
+                title="AnimaSentio - Digital Human Research - Prof Sardar Jeasy Sehgal"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
               ></iframe>
             </div>
           </div>
@@ -175,9 +203,9 @@ export default function AnimaSentioLab() {
               <div>
                 <p className="mb-4">
                   The project integrates cutting-edge AI and computer vision
-                  technologies. Virtual humans are powered by Unreal Engine&apos;s
-                  animation tools, Convai, and NVIDIA platforms like ACE and
-                  NIMs for real-time interactions.
+                  technologies. Virtual humans are powered by Unreal
+                  Engine&apos;s animation tools, Convai, and NVIDIA platforms
+                  like ACE and NIMs for real-time interactions.
                 </p>
                 <p className="mb-4">
                   These beings are able to see and hear users, processing speech
@@ -189,7 +217,7 @@ export default function AnimaSentioLab() {
                   processing.
                 </p>
               </div>
-              <div>
+              <div className="mt-8 md:mt-0">
                 <h3 className="text-xl font-semibold mb-4">Research Phases</h3>
                 <ol className="list-decimal list-inside space-y-2">
                   <li>
@@ -231,35 +259,17 @@ export default function AnimaSentioLab() {
             <h2 className="text-3xl font-bold mb-8 text-center">
               Project Renders
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Image
-                src="/images/image1.png"
-                alt="Virtual Human Render 1"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md"
-              />
-              <Image
-                src="/images/image2.png"
-                alt="Virtual Human Render 2"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md"
-              />
-              <Image
-                src="/images/image3.png"
-                alt="Virtual Human Render 3"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md"
-              />
-              <Image
-                src="/images/image4.png"
-                alt="Virtual Human Render 3"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[1, 2, 3, 4].map((i) => (
+                <Image
+                  key={i}
+                  src={`/images/image${i}.png`}
+                  alt={`Virtual Human Render ${i}`}
+                  width={400}
+                  height={300}
+                  className="rounded-lg shadow-md w-full h-auto"
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -273,7 +283,7 @@ export default function AnimaSentioLab() {
             <h2 className="text-3xl font-bold mb-12 text-center text-purple-600">
               Meet the Team
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   name: "Jeasy Sehgal",
@@ -397,7 +407,7 @@ export default function AnimaSentioLab() {
                   in healthcare, digital therapy, and customer service.
                 </p>
               </div>
-              <div>
+              <div className="mt-8 md:mt-0">
                 <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
                 <p>
                   The goal is to make learning and customer interactions more
