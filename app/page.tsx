@@ -175,7 +175,7 @@ export default function AnimaSentioLab() {
               <div>
                 <p className="mb-4">
                   The project integrates cutting-edge AI and computer vision
-                  technologies. Virtual humans are powered by Unreal Engine's
+                  technologies. Virtual humans are powered by Unreal Engine&apos;s
                   animation tools, Convai, and NVIDIA platforms like ACE and
                   NIMs for real-time interactions.
                 </p>
