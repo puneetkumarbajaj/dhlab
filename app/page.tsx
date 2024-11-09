@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function AnimaSentioLab() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
 
   return (
     <div className="flex flex-col min-h-screen scroll-smooth">
