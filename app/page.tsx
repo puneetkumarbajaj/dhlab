@@ -1,403 +1,434 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Play, Linkedin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import ContactForm from "./components/email";
 
-export default function Home() {
+export default function AnimaSentioLab() {
   return (
-    <main className="h-full w-full bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50">
-      {/* Hero Section */}
-      <section id="Hero" className="relative">
-        {/* Background image for md and above */}
-        <div
-          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/images/background.jpg')`,
-            height: "100vh",
-          }}
-        ></div>
-
-        {/* Content */}
-        <div className="relative z-10 h-screen flex flex-col w-full items-center justify-center text-white">
-          <h1
-            className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-6xl text-gray-900 md:text-white text-center animate-fadeIn"
-            style={{
-              textShadow: "2px 4px 6px rgba(0,0,0,0.3)",
-            }}
-          >
-            Welcome to AnimaSentio
-          </h1>
-          <p className="leading-7 text-gray-700 md:text-gray-300 text-center mt-4 mb-8 animate-fadeIn delay-100">
-            Revolutionizing Interactive Education with Virtual Experiences
-          </p>
-          <div className="flex gap-8 md:gap-20">
-            <Link href="#About" scroll={true}>
-              <Button className="transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-blue-700">
-                Learn More
-              </Button>
-            </Link>
-            <Link href="https://youtu.be/gqgB3yxoU2g" target="_blank">
-              <Button className="transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-purple-700">
-                See a Demo
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="About" className="py-20">
-        <div className="container mx-auto px-8 md:px-16 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 animate-fadeIn">
-            What is AnimaSentio?
-          </h2>
-          <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-100">
-            AnimaSentio is an innovative research project focused on
-            transforming the way we learn through interactive, AI-driven virtual
-            human simulations. By integrating advanced technologies like
-            computer vision and emotion-detection algorithms, we are creating
-            digital human characters capable of engaging with users in real-time, 
-            providing a unique, natural way to learn.
-          </p>
-          <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-200">
-            Our project, led by Professor Jeasy Sehgal at Georgia State
-            University, aims to bring history to life by allowing users to
-            interact with 3D models of historical figures, all powered by
-            conversational AI and realistic animations. Imagine learning about
-            the civil rights movement by talking directly with a digital version
-            of Dr. Martin Luther King Jr., or exploring ancient Egypt with a
-            digital Cleopatra as your guide. This technology takes traditional
-            education methods to a new level by fostering deeper engagement and
-            knowledge retention.
-          </p>
-          <p className="text-lg leading-7 text-gray-700 animate-fadeIn delay-200">
-            Our primary focus is creating meaningful educational experiences,
-            particularly for museums, where visitors can interact with digital
-            humans who respond to their emotions, facial expressions, and
-            voices, creating a truly personalized learning journey.
-          </p>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section
-        id="Features"
-        className="bg-gradient-to-b from-pink-50 to-purple-50 py-20"
-      >
-        <div className="container mx-auto px-8 md:px-16 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 animate-fadeIn">
-            Key Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-100">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                Realistic Virtual Human Animations
-              </h3>
-              <p className="text-gray-700">
-                Virtual humans equipped with lifelike animations and emotions
-                using Unreal Engine 5 and NVIDIA ACE.
-              </p>
+    <div className="flex flex-col min-h-screen scroll-smooth">
+      <header className="bg-gray-100 py-4">
+        <div className="container mx-auto px-4">
+          <nav className="flex justify-between items-center">
+            <div className="text-2xl font-bold">AnimaSentio</div>
+            <div className="space-x-4">
+              <Link href="#about" className="hover:underline">
+                About
+              </Link>
+              <Link href="#features" className="hover:underline">
+                Features
+              </Link>
+              <Link href="#research" className="hover:underline">
+                Research
+              </Link>
+              <Link href="#team" className="hover:underline">
+                Team
+              </Link>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-200">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                Emotion Detection
-              </h3>
-              <p className="text-gray-700">
-                AI-powered emotion detection to tailor interactions based on
-                user mood and tone, enhancing immersion.
-              </p>
-            </div>
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                Conversational AI
-              </h3>
-              <p className="text-gray-700">
-                Interact with virtual historical figures, ask questions, and
-                experience personalized responses.
-              </p>
+          </nav>
+        </div>
+      </header>
+
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-5xl font-bold mb-4">Welcome to AnimaSentio</h1>
+            <p className="text-xl mb-8">
+              Revolutionizing Interactive Education with Virtual Experiences
+            </p>
+            <div className="space-x-4 flex justify-center">
+              <Link href="#research">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="flex items-center"
+                >
+                  Learn More
+                </Button>
+              </Link>
+              <Link href="#demo">
+                <Button size="lg" className="flex items-center">
+                  <Play className="mr-2 h-4 w-4" />
+                  See a Demo
+                </Button>
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Research & Technology Section */}
-      <section id="Research" className="py-20 bg-white">
-        <div className="container mx-auto px-8 md:px-16 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 animate-fadeIn">
-            The Technology Behind AnimaSentio
-          </h2>
-          <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-100">
-            At the heart of AnimaSentio lies cutting-edge AI and
-            computer vision technologies. We integrate Unreal Engine’s advanced
-            animation tools with Convai and NVIDIA platforms like ACE and NIMs to create
-            digital humans capable of realistic human-like interactions.
-          </p>
-          <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-200">
-            These virtual beings see and hear users, processing their speech
-            and facial expressions in real-time. Data collected from video,
-            audio, and text is processed by AI models like NVIDIA NeMo and
-            Elevenlabs for natural conversational responses.
-          </p>
-          <p className="text-lg leading-7 text-gray-700 animate-fadeIn delay-300">
-            We prioritize privacy by ensuring no sensitive or personal data is
-            stored. Our AI discourages sharing of confidential information, and
-            all data is securely discarded before storage.
-          </p>
-        </div>
-      </section>
-
-      {/* Research Phases Section */}
-      {/* Research Phases Section */}
-      <section id="Phases" className="py-20">
-        <div className="container mx-auto px-8 md:px-16">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12 animate-fadeIn">
-            Research Phases
-          </h2>
-          <div className="space-y-8">
-            {/* Phase 1 */}
-            <div className="flex flex-col items-start gap-4 animate-fadeIn delay-100">
-              <span className="text-2xl font-bold text-gray-800">Phase 1</span>
-              <p className="text-gray-700">
-                In this phase, we developed the emotional and empathic response
-                system for our digital humans using Unreal Engine 5, enabling
-                them to react to users emotions.
-              </p>
-            </div>
-
-            {/* Phase 2 */}
-            <div className="flex flex-col items-start gap-4 animate-fadeIn delay-200">
-              <span className="text-2xl font-bold text-gray-800">Phase 2</span>
-              <p className="text-gray-700">
-                This phase integrates morph targets (facial, head, eye
-                movements) with computer vision algorithms. OpenCV helps the
-                digital human adjust its gaze and expressions based on user
-                positioning.
-              </p>
-            </div>
-
-            {/* Phase 3 */}
-            <div className="flex flex-col items-start gap-4 animate-fadeIn delay-300">
-              <span className="text-2xl font-bold text-gray-800">Phase 3</span>
-              <p className="text-gray-700">
-                We are working on automating animations triggered by real-time
-                computer vision. When a user moves or changes expression, the
-                digital human responds dynamically.
-              </p>
-            </div>
-
-            {/* Phase 4 */}
-            <div className="flex flex-col items-start gap-4 animate-fadeIn delay-400">
-              <span className="text-2xl font-bold text-gray-800">Phase 4</span>
-              <p className="text-gray-700">
-                AI-generated voiceovers will be integrated for fluid
-                conversations. By analyzing speech patterns, the system will
-                generate appropriate, context-driven dialogue, while NVIDIA ACE
-                will sync facial movements to speech.
-              </p>
-            </div>
-
-            {/* Phase 5 */}
-            <div className="flex flex-col items-start gap-4 animate-fadeIn delay-500">
-              <span className="text-2xl font-bold text-gray-800">Phase 5</span>
-              <p className="text-gray-700">
-                By incorporating a conversational AI model like GPT, we aim to
-                create real-time interactive dialogues, where users can ask the
-                digital human questions and receive intelligent, context-aware
-                responses.
-              </p>
-            </div>
-
-            {/* Phase 6 */}
-            <div className="flex flex-col items-start gap-4 animate-fadeIn delay-700">
-              <span className="text-2xl font-bold text-gray-800">Phase 6</span>
-              <p className="text-gray-700">
-                Plans for future development include extending the scope of
-                interactive learning and expanding digital human capabilities
-                for use in different sectors, including healthcare and
-                education.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet the Team Section */}
-      <section
-        id="Team"
-        className="py-20 bg-gradient-to-b from-pink-50 to-purple-50"
-      >
-        <div className="container mx-auto px-8 md:px-16 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 animate-fadeIn">
-            Meet the Team
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-100">
-              <div className="flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage
-                    src="/images/jeasy-avatar.jpg"
-                    alt="Jeasy Sehgal"
-                  />
-                  <AvatarFallback>JS</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Jeasy Sehgal
-                </h3>
-                <p className="text-gray-500 mb-2">Principal Investigator</p>
-                <p className="text-sm text-gray-700">
-                  Professor of Practice at Creative Media Industries Institute,
-                  Georgia State University
+        {/* About Section */}
+        <section id="about" className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              What is AnimaSentio?
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="mb-4">
+                  AnimaSentio is an innovative research project focused on
+                  transforming the way we learn through interactive, AI-driven
+                  virtual human simulations. It integrates technologies like
+                  computer vision and emotion-detection algorithms to create
+                  digital human characters capable of engaging with users in
+                  real-time.
+                </p>
+                <p className="mb-4">
+                  Led by Professor Jeasy Sehgal at Georgia State University, it
+                  focuses on bringing history to life by enabling interactions
+                  with 3D models of historical figures powered by conversational
+                  AI.
+                </p>
+                <p>
+                  Example: Learning about the civil rights movement through
+                  interaction with a digital Dr. Martin Luther King Jr., or
+                  exploring ancient Egypt with a digital Cleopatra.
                 </p>
               </div>
-            </div>
-
-            {/* Team Member 2 */}
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-200">
-              <div className="flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage
-                    src="/images/puneet-avatar.png"
-                    alt="Puneet Bajaj"
-                  />
-                  <AvatarFallback>PB</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Puneet Bajaj
-                </h3>
-                <p className="text-gray-500 mb-2">Research Assistant</p>
-                <p className="text-sm text-gray-700">
-                  Creative Media Industries Institute, Georgia State University
-                </p>
-              </div>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
-              <div className="flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage
-                    src="/images/nick.png"
-                    alt="Nicolas Salazar"
-                  />
-                  <AvatarFallback>NS</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Nicolas Salazar
-                </h3>
-                <p className="text-gray-500 mb-2">Research Assistant</p>
-                <p className="text-sm text-gray-700">
-                  Georgia State University
-                </p>
-              </div>
-            </div>
-            {/* Team Member 4 */}
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
-              <div className="flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage
-                    src="/images/elias.jpeg"
-                    alt="Elias Treadway"
-                  />
-                  <AvatarFallback>ET</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Elias Treadway
-                </h3>
-                <p className="text-gray-500 mb-2">Research Assistant</p>
-                <p className="text-sm text-gray-700">
-                  Creative Media Industries Institute, Georgia State University
-                </p>
-              </div>
-            </div>
-            {/* Team Member 5 */}
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
-              <div className="flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage
-                    src="/images/nicolas-avatar.jpg"
-                    alt="Troy"
-                  />
-                  <AvatarFallback>T</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Troy
-                </h3>
-                <p className="text-gray-500 mb-2">Research Assistant</p>
-                <p className="text-sm text-gray-700">
-                  Georgia State University
-                </p>
-              </div>
-            </div>
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
-              <div className="flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage
-                    src="/images/Taylor.jpeg"
-                    alt="Troy"
-                  />
-                  <AvatarFallback>TM</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Taylor Middleton
-                </h3>
-                <p className="text-gray-500 mb-2">Research Assistant</p>
-                <p className="text-sm text-gray-700">
-                  Georgia State University
-                </p>
-              </div>
-            </div>
-            <div className="p-6 bg-white rounded-lg shadow-md transform transition duration-300 hover:scale-105 animate-fadeIn delay-300">
-              <div className="flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage
-                    src="/images/kevin.jpg"
-                    alt="Kevin Gallardo"
-                  />
-                  <AvatarFallback>T</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                  Kevin Gallardo
-                </h3>
-                <p className="text-gray-500 mb-2">Graduate Research Assistant</p>
-                <p className="text-sm text-gray-700">
-                CHAI center DoD center
-                </p>
+              <div className="bg-gray-200 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-4">Project Goals</h3>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>
+                    Create personalized educational experiences for museum
+                    visitors
+                  </li>
+                  <li>
+                    Develop digital humans that respond to emotions, facial
+                    expressions, and voices
+                  </li>
+                  <li>
+                    Enhance engagement and knowledge retention through immersive
+                    interactions
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Impact and Future Goals Section */}
-      <section id="Impact" className="py-20 bg-white">
-        <div className="container mx-auto px-8 md:px-16 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 animate-fadeIn">
-            Impact and Future Goals
-          </h2>
-          <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-100">
-            AnimaSentio is set to revolutionize how education is
-            delivered by providing personalized, immersive learning experiences.
-            We aim to enhance user engagement and knowledge retention,
-            particularly in museum settings, with real-time AI-driven
-            conversations.
-          </p>
-          <p className="text-lg leading-7 text-gray-700 mb-6 animate-fadeIn delay-200">
-            Looking to the future, we plan to expand the library of digital
-            historical figures, partner with museums, and explore additional
-            applications in sectors such as healthcare, digital therapy, and
-            customer service.
-          </p>
-          <p className="text-lg leading-7 text-gray-700 animate-fadeIn delay-300">
-            We aim to push the boundaries of virtual human interaction, bringing
-            this technology to new environments and sectors, making learning and
-            customer interactions more engaging and meaningful.
-          </p>
-        </div>
-      </section>
+        {/* Features Section */}
+        <section id="features" className="bg-gray-100 py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-12 text-center">
+              Key Features
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Realistic Virtual Human Animations</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  Virtual humans with lifelike animations and emotions powered
+                  by Unreal Engine 5 and NVIDIA ACE.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Emotion Detection</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  AI-powered emotion detection to tailor interactions based on
+                  user mood and tone, enhancing immersion.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Conversational AI</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  Users can interact with virtual historical figures, ask
+                  questions, and receive personalized responses.
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
 
-      {/* Contact Section */}
-      <ContactForm />
-    </main>
+        {/* Video Showcase Section */}
+        <section id="demo" className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              See AnimaSentio in Action
+            </h2>
+            <div className="aspect-w-16 aspect-h-9 origin-center">
+              <iframe
+                width="1253"
+                height="705"
+                src="https://www.youtube.com/embed/BiqYFI3RoUM"
+                title="AnimaSento - Digital Human Research - Prof  Sardar Jeasy Sehgal"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        {/* Research & Technology Section */}
+        <section id="research" className="bg-gray-100 py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              The Technology Behind AnimaSentio
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <p className="mb-4">
+                  The project integrates cutting-edge AI and computer vision
+                  technologies. Virtual humans are powered by Unreal Engine's
+                  animation tools, Convai, and NVIDIA platforms like ACE and
+                  NIMs for real-time interactions.
+                </p>
+                <p className="mb-4">
+                  These beings are able to see and hear users, processing speech
+                  and facial expressions with AI models like NVIDIA NeMo and
+                  Elevenlabs for natural conversation.
+                </p>
+                <p>
+                  Privacy is a priority, with all data securely discarded after
+                  processing.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Research Phases</h3>
+                <ol className="list-decimal list-inside space-y-2">
+                  <li>
+                    Developed emotional and empathic response systems using
+                    Unreal Engine 5.
+                  </li>
+                  <li>
+                    Integrated facial, head, and eye movements with computer
+                    vision algorithms (using OpenCV) to adjust gaze and
+                    expressions.
+                  </li>
+                  <li>
+                    Automating animations based on real-time computer
+                    vision—digital humans respond dynamically to user movement
+                    and expressions.
+                  </li>
+                  <li>
+                    Integrated AI-generated voiceovers for fluid conversations
+                    with facial animation synchronization (powered by NVIDIA
+                    ACE).
+                  </li>
+                  <li>
+                    Use of GPT-based conversational AI to allow real-time
+                    interactive dialogues with users.
+                  </li>
+                  <li>
+                    Expansion into other sectors (e.g., healthcare, education)
+                    and the development of new interactive learning experiences.
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Photo Renders Showcase */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Project Renders
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <Image
+                src="/images/image1.png"
+                alt="Virtual Human Render 1"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-md"
+              />
+              <Image
+                src="/images/image2.png"
+                alt="Virtual Human Render 2"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-md"
+              />
+              <Image
+                src="/images/image3.png"
+                alt="Virtual Human Render 3"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-md"
+              />
+              <Image
+                src="/images/image4.png"
+                alt="Virtual Human Render 3"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Meet the Team Section */}
+        <section
+          id="team"
+          className="bg-gradient-to-b from-gray-100 to-white py-20"
+        >
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-12 text-center text-purple-600">
+              Meet the Team
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Jeasy Sehgal",
+                  role: "Principal Investigator",
+                  affiliation:
+                    "Professor of Practice at Creative Media Industries Institute, Georgia State University",
+                  image: "/images/jeasy-avatar.jpg",
+                  linkedin: "https://www.linkedin.com/in/jeasysehgal/",
+                },
+                {
+                  name: "Puneet Bajaj",
+                  role: "Research Assistant",
+                  affiliation:
+                    "Creative Media Industries Institute, Georgia State University",
+                  image: "/images/puneet-avatar.png",
+                  linkedin: "https://www.linkedin.com/in/puneetkumarbajaj/",
+                },
+                {
+                  name: "Nicolas Salazar",
+                  role: "Research Assistant",
+                  affiliation: "Georgia State University",
+                  image: "/images/nick.png",
+                  linkedin: "https://www.linkedin.com/in/nicolassalazar-pro/",
+                },
+                {
+                  name: "Elias Treadway",
+                  role: "Research Assistant",
+                  affiliation:
+                    "Creative Media Industries Institute, Georgia State University",
+                  image: "/images/elias.jpeg",
+                  linkedin:
+                    "https://www.linkedin.com/in/elias-treadway-41293b1b5/",
+                },
+                {
+                  name: "Troy",
+                  role: "Research Assistant",
+                  affiliation: "Georgia State University",
+                  image:
+                    "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
+                  linkedin: "/",
+                },
+                {
+                  name: "Kevin Gallardo",
+                  role: "Research Assistant",
+                  affiliation: "Georgia State University",
+                  image: "/images/kevin.jpg",
+                  linkedin:
+                    "https://www.linkedin.com/in/kevin-gallardo-1a079b1b6/",
+                },
+                {
+                  name: "Vaishnavi Adepu",
+                  role: "Research Assistant",
+                  affiliation: "Georgia State University",
+                  image: "/images/navi.jpg",
+                  linkedin: "https://www.linkedin.com/in/vaishnavi-adepu444/",
+                },
+              ].map((member, index) => (
+                <Card
+                  key={index}
+                  className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <CardHeader>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={`Avatar of ${member.name}`}
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <CardTitle className="text-center text-purple-600">
+                      {member.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="font-semibold text-center">{member.role}</p>
+                    <p className="text-sm text-gray-600 text-center mb-4">
+                      {member.affiliation}
+                    </p>
+                    <div className="flex justify-center">
+                      <Link
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center space-x-2"
+                        >
+                          <Linkedin className="w-4 h-4" />
+                          <span>LinkedIn</span>
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Impact and Future Goals Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Impact and Future Goals
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <p className="mb-4">
+                  AnimaSentio aims to revolutionize education with personalized,
+                  immersive learning experiences. The project seeks to enhance
+                  user engagement and knowledge retention in museums with
+                  AI-driven, real-time conversations.
+                </p>
+                <p>
+                  Future plans include expanding the library of historical
+                  figures, partnering with museums, and exploring applications
+                  in healthcare, digital therapy, and customer service.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
+                <p>
+                  The goal is to make learning and customer interactions more
+                  engaging and meaningful by extending virtual human
+                  capabilities to new sectors.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <h3 className="text-xl font-bold">AnimaSentio</h3>
+              <p className="text-sm">Revolutionizing Interactive Education</p>
+            </div>
+            <div className="flex space-x-4">
+              <Link href="mailto:jsingh31@gsu.edu" className="hover:underline">
+                Contact Us
+              </Link>
+            </div>
+          </div>
+          <div className="mt-8 text-center text-sm">
+            © {new Date().getFullYear()} AnimaSentio Research Lab. All rights
+            reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
