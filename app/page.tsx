@@ -318,12 +318,12 @@ export default function AnimaSentioLab() {
                     "https://www.linkedin.com/in/elias-treadway-41293b1b5/",
                 },
                 {
-                  name: "Troy",
+                  name: "Troy Brown",
                   role: "Research Assistant",
                   affiliation: "Georgia State University",
                   image:
-                    "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-                  linkedin: "/",
+                    "/images/troy.jpg",
+                  linkedin: "https://www.linkedin.com/in/troy-brown-a58b23123/",
                 },
                 {
                   name: "Kevin Gallardo",
